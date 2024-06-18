@@ -27,7 +27,6 @@ Favicon for docs is located in `public/`
 By default, pages are sorted in alphabetical order according to the file slug. Sidebar frontmatter options allow you to define a custom sort weighting. See [Sidebar Navigation](https://starlight.astro.build/guides/sidebar/)
 
 ```yaml
-// src/content/docs/example.md
 ---
 title: My page
 sidebar:
