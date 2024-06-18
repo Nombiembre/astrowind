@@ -65,6 +65,7 @@ export default defineConfig({
       config: "./src/config.yaml",
     }),
     starlight({
+      site: "https://astrowind.nombiembre.dev",
       title: "AstroWind",
       disable404Route: true,
     }),
