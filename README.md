@@ -1,3 +1,27 @@
+## How to change site url
+
+- Edit `src/config.yaml` and change `site.site` to your new url
+- Edit `astro.config.mjs` and change `site` to your new url
+
+## How to change site title
+
+- Edit `src/config.yaml` and change `site.name` to your new title
+- Edit `src/config.yaml` and change `metadata.title.default` to your new title
+- Edit `src/config.yaml` and change `openGraph.site_name` to your new title
+
+For Docs site, you can change the title in `astro.config.mjs`:
+
+```js "title"
+  starlight({
+      title: "AstroWind",
+    }),
+```
+
+## How to change favicons
+
+Favicons for astrowind are located in `src/assets/favicons` and are used in `src/components/Favicons.astro`
+Favicon for docs is located in `public/`
+
 ## Dependencies from `dependencies`
 
 ### Removed
