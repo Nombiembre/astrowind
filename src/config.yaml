@@ -1,6 +1,6 @@
 site:
   name: AstroWind
-  site: "https://astrowind.vercel.app"
+  site: "https://astrowind.nombiembre.dev"
   base: "/"
   trailingSlash: false
 
