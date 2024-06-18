@@ -21,6 +21,7 @@ const whenExternalScripts = (items = []) =>
 // https://astro.build/config
 export default defineConfig({
   output: "static",
+  site: "https://astrowind.nombiembre.dev",
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -65,7 +66,6 @@ export default defineConfig({
       config: "./src/config.yaml",
     }),
     starlight({
-      site: "https://astrowind.nombiembre.dev",
       title: "AstroWind",
       disable404Route: true,
     }),
