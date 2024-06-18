@@ -22,6 +22,20 @@ For Docs site, you can change the title in `astro.config.mjs`:
 Favicons for astrowind are located in `src/assets/favicons` and are used in `src/components/Favicons.astro`
 Favicon for docs is located in `public/`
 
+## How to change docs sidebar navigation order
+
+By default, pages are sorted in alphabetical order according to the file slug. Sidebar frontmatter options allow you to define a custom sort weighting. See [Sidebar Navigation](https://starlight.astro.build/guides/sidebar/)
+
+```yaml
+// src/content/docs/example.md
+---
+title: My page
+sidebar:
+  # Set a custom order for the link (lower numbers are displayed higher up)
+  order: 2
+---
+```
+
 ## Dependencies from `dependencies`
 
 ### Removed
