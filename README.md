@@ -1,9 +1,11 @@
-## How to change site url
+## Site configuration
+
+### How to change site url
 
 - Edit `src/config.yaml` and change `site.site` to your new url
 - Edit `astro.config.mjs` and change `site` to your new url
 
-## How to change site title
+### How to change site title
 
 - Edit `src/config.yaml` and change `site.name` to your new title
 - Edit `src/config.yaml` and change `metadata.title.default` to your new title
@@ -11,18 +13,18 @@
 
 For Docs site, you can change the title in `astro.config.mjs`:
 
-```js "title"
+```js
   starlight({
       title: "AstroWind",
     }),
 ```
 
-## How to change favicons
+### How to change favicons
 
 Favicons for astrowind are located in `src/assets/favicons` and are used in `src/components/Favicons.astro`
 Favicon for docs is located in `public/`
 
-## How to change docs sidebar navigation order
+### How to change docs sidebar navigation order
 
 By default, pages are sorted in alphabetical order according to the file slug. Sidebar frontmatter options allow you to define a custom sort weighting. See [Sidebar Navigation](https://starlight.astro.build/guides/sidebar/)
 
@@ -35,13 +37,15 @@ sidebar:
 ---
 ```
 
-## Dependencies from `dependencies`
+## Dependencies
 
-### Removed
+### From `dependencies`
+
+#### Removed
 
 - `@astrojs/rss`
 
-### Keeped
+#### Keeped
 
 - `@astrojs/sitemap` Sitemap generation is better for google to understand the site structure
 - `@astrolib/analytics`: Google Analytics
@@ -55,9 +59,9 @@ sidebar:
 - `lodash.merge`: merge, used in configBuilder.ts
 - `unpic`: Optimized images, used in Image.astro and images-optimization.ts
 
-## Dependencies from `devDependencies`
+### From `devDependencies`
 
-### removed
+#### Removed
 
 - `@astrojs/mdx` Mainly used for blog posts
 - `globals` JSON file accesible globally, but not being used in onwidget/astrowind
@@ -76,7 +80,7 @@ sidebar:
 
   Add eslint dependencies based on your preferences
 
-### Keeped
+#### Keeped
 
 - `@astrojs/partytown` Increases web performance
 - `@astrojs/tailwind`
@@ -154,7 +158,7 @@ sidebar:
 - src/navigation.js
 - src/pages/homes/mobile-app.astro
 - src/pages/homes/personal.astro
-- src/pages/homes/saas.astro
+- src.pages/homes/saas.astro
 - src/pages/index.astro
 - src/pages/privacy.md
 - src/pages/terms.md
