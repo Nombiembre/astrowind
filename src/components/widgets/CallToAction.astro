@@ -1,8 +1,9 @@
 ---
-import WidgetWrapper from '../ui/WidgetWrapper.astro';
-import type { CallToAction, Widget } from '~/types';
-import Headline from '~/components/ui/Headline.astro';
-import Button from '~/components/ui/Button.astro';
+import WidgetWrapper from "../ui/WidgetWrapper.astro";
+import type { CallToAction, Widget } from "~/types";
+import Headline from "~/components/ui/Headline.astro";
+import Button from "~/components/ui/Button.astro";
+import { Image } from "astro:assets";
 
 interface Props extends Widget {
   title?: string;
@@ -10,22 +11,29 @@ interface Props extends Widget {
   tagline?: string;
   callToAction?: CallToAction;
   actions?: string | CallToAction[];
+  image?: string | any;
 }
 
 const {
-  title = await Astro.slots.render('title'),
-  subtitle = await Astro.slots.render('subtitle'),
-  tagline = await Astro.slots.render('tagline'),
-  actions = await Astro.slots.render('actions'),
+  title = await Astro.slots.render("title"),
+  subtitle = await Astro.slots.render("subtitle"),
+  tagline = await Astro.slots.render("tagline"),
+  actions = await Astro.slots.render("actions"),
+  image = await Astro.slots.render("image"),
 
   id,
   isDark = false,
   classes = {},
-  bg = await Astro.slots.render('bg'),
+  bg = await Astro.slots.render("bg"),
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-6xl mx-auto ${classes?.container ?? ""}`}
+  bg={bg}
+>
   <div
     class="max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600"
   >
@@ -34,9 +42,10 @@ const {
       subtitle={subtitle}
       tagline={tagline}
       classes={{
-        container: 'mb-0 md:mb-0',
-        title: 'text-4xl md:text-4xl font-bold tracking-tighter mb-4 font-heading',
-        subtitle: 'text-xl text-muted dark:text-slate-400',
+        container: "mb-0 md:mb-0",
+        title:
+          "text-4xl md:text-4xl font-bold tracking-tighter mb-4 font-heading",
+        subtitle: "text-xl text-muted dark:text-slate-400",
       }}
     />
     {
@@ -51,6 +60,17 @@ const {
           ) : (
             <Fragment set:html={actions} />
           )}
+        </div>
+      )
+    }
+    {
+      image && (
+        <div class="relative m-auto max-w-5xl mt-6 ">
+          <img
+            class="mx-auto rounded-md md:w-[400px] w-[250px]"
+            loading="lazy"
+            {...image}
+          />
         </div>
       )
     }
